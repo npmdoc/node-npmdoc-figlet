@@ -1,0 +1,1285 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/patorjk/figlet.js">figlet (v1.2.0)</a>
+</h1>
+<h4>Creates ASCII Art from text. A full implementation of the FIGfont spec.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.figlet">module figlet</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet">
+            function <span class="apidocSignatureSpan"></span>figlet
+            <span class="apidocSignatureSpan">(txt, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.defaults">
+            function <span class="apidocSignatureSpan">figlet.</span>defaults
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.fonts">
+            function <span class="apidocSignatureSpan">figlet.</span>fonts
+            <span class="apidocSignatureSpan">(next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.fontsSync">
+            function <span class="apidocSignatureSpan">figlet.</span>fontsSync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.loadFont">
+            function <span class="apidocSignatureSpan">figlet.</span>loadFont
+            <span class="apidocSignatureSpan">(name, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.loadFontSync">
+            function <span class="apidocSignatureSpan">figlet.</span>loadFontSync
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.metadata">
+            function <span class="apidocSignatureSpan">figlet.</span>metadata
+            <span class="apidocSignatureSpan">(fontName, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.parseFont">
+            function <span class="apidocSignatureSpan">figlet.</span>parseFont
+            <span class="apidocSignatureSpan">(fontName, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.preloadFonts">
+            function <span class="apidocSignatureSpan">figlet.</span>preloadFonts
+            <span class="apidocSignatureSpan">(fonts, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.text">
+            function <span class="apidocSignatureSpan">figlet.</span>text
+            <span class="apidocSignatureSpan">(txt, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.textSync">
+            function <span class="apidocSignatureSpan">figlet.</span>textSync
+            <span class="apidocSignatureSpan">(txt, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.figlet.figlet">module figlet.figlet</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.figlet">
+            function <span class="apidocSignatureSpan">figlet.</span>figlet
+            <span class="apidocSignatureSpan">(txt, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.defaults">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>defaults
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.fonts">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>fonts
+            <span class="apidocSignatureSpan">(next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.fontsSync">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>fontsSync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.loadFont">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>loadFont
+            <span class="apidocSignatureSpan">(name, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.loadFontSync">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>loadFontSync
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.metadata">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>metadata
+            <span class="apidocSignatureSpan">(fontName, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.parseFont">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>parseFont
+            <span class="apidocSignatureSpan">(fontName, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.preloadFonts">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>preloadFonts
+            <span class="apidocSignatureSpan">(fonts, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.text">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>text
+            <span class="apidocSignatureSpan">(txt, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.figlet.figlet.textSync">
+            function <span class="apidocSignatureSpan">figlet.figlet.</span>textSync
+            <span class="apidocSignatureSpan">(txt, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.figlet" id="apidoc.module.figlet">module figlet</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet" id="apidoc.element.figlet.figlet">
+        function <span class="apidocSignatureSpan"></span>figlet
+        <span class="apidocSignatureSpan">(txt, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">figlet = function (txt, options, next) {
+    me.text(txt, options, next);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.defaults" id="apidoc.element.figlet.defaults">
+        function <span class="apidocSignatureSpan">figlet.</span>defaults
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function (opts) {
+    if (typeof opts === 'object' &amp;&amp; opts !== null) {
+        for (var prop in opts) {
+            if (opts.hasOwnProperty(prop)) {
+                figDefaults[prop] = opts[prop];
+            }
+        }
+    }
+    return JSON.parse(JSON.stringify(figDefaults));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### textSync
+
+The browser API supports a synchronous mode so long as fonts used are preloaded.
+
+Example:
+
+```js
+figlet.<span class="apidocCodeKeywordSpan">defaults</span>({fontPath: "assets/fonts"});
+
+figlet.preloadFonts(["Standard", "Ghost"], ready);
+
+function ready(){
+  console.log(figlet.textSync("ASCII"));
+  console.log(figlet.textSync("Art", "Ghost"));
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.fonts" id="apidoc.element.figlet.fonts">
+        function <span class="apidocSignatureSpan">figlet.</span>fonts
+        <span class="apidocSignatureSpan">(next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fonts = function (next) {
+    var fontList = [];
+    fs.readdir(fontDir, function (err, files) { // '/' denotes the root folder
+        if (err) {
+            return next(err);
+        }
+
+        files.forEach( function (file) {
+            if ( /\.flf$/.test(file) ) {
+                fontList.push( file.replace(/\.flf$/,'') );
+            }
+        });
+
+        next(null, fontList);
+    });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### fonts
+
+The fonts function allows you to get a list of all of the available fonts. Example usage:
+
+```js
+figlet.<span class="apidocCodeKeywordSpan">fonts</span>(function(err, fonts) {
+    if (err) {
+        console.log('something went wrong...');
+        console.dir(err);
+        return;
+    }
+    console.dir(fonts);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.fontsSync" id="apidoc.element.figlet.fontsSync">
+        function <span class="apidocSignatureSpan">figlet.</span>fontsSync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fontsSync = function () {
+    var fontList = [];
+    fs.readdirSync(fontDir).forEach(function(file) {
+        if ( /\.flf$/.test(file) ) {
+            fontList.push( file.replace(/\.flf$/,'') );
+        }
+    });
+
+    return fontList;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### fontsSync
+
+The synchronous version of the fonts method
+
+```js
+console.log(figlet.<span class="apidocCodeKeywordSpan">fontsSync</span>());
+```
+
+Getting Started - The Browser
+-------------------------
+
+The browser API is the same as the Node API with the exception of the "fonts" method not being available. The browser
+version also requires [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) (or a [shim](https://github.com/github
+/fetch)) for its loadFont function.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.loadFont" id="apidoc.element.figlet.loadFont">
+        function <span class="apidocSignatureSpan">figlet.</span>loadFont
+        <span class="apidocSignatureSpan">(name, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFont = function (name, next) {
+    fs.readFile(fontDir + name + '.flf',  {encoding: 'utf-8'}, function(err, fontData) {
+        if (err) {
+            return next(err);
+        }
+
+        fontData = fontData + '';
+        try {
+            next(null, figlet.parseFont(name, fontData));
+        } catch(error) {
+            next(error);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.loadFontSync" id="apidoc.element.figlet.loadFontSync">
+        function <span class="apidocSignatureSpan">figlet.</span>loadFontSync
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFontSync = function (name) {
+    var fontData = fs.readFileSync(fontDir + name + '.flf',  {encoding: 'utf-8'});
+
+    fontData = fontData + '';
+    return figlet.parseFont(name, fontData);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.metadata" id="apidoc.element.figlet.metadata">
+        function <span class="apidocSignatureSpan">figlet.</span>metadata
+        <span class="apidocSignatureSpan">(fontName, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">metadata = function (fontName, next) {
+    fontName = fontName + '';
+
+<span class="apidocCodeCommentSpan">    /*
+        Load the font. If it loads, it's data will be contained in the figFonts object.
+        The callback will recieve a fontsOpts object, which contains the default
+        options of the font (its fitting rules, etc etc).
+    */
+</span>    me.loadFont(fontName, function(err, fontOpts) {
+        if (err) {
+            next(err);
+            return;
+        }
+
+        next(null, fontOpts, figFonts[fontName].comment);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+In most cases you'll either use the default setting or the "fitted" setting. Most fonts don't support vertical
+ kerning, but a hand full fo them do (like the "Standard" font).
+
+### metadata
+
+The metadata function allows you to retrieve a font's default options and header comment. Example usage:
+
+```js
+figlet.<span class="apidocCodeKeywordSpan">metadata</span>('Standard', function(err, options, headerComment) {
+if (err) {
+    console.log('something went wrong...');
+    console.dir(err);
+    return;
+}
+console.dir(options);
+console.log(headerComment);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.parseFont" id="apidoc.element.figlet.parseFont">
+        function <span class="apidocSignatureSpan">figlet.</span>parseFont
+        <span class="apidocSignatureSpan">(fontName, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseFont = function (fontName, data) {
+    data = data.replace(/\r\n/g,"\n").replace(/\r/g,"\n");
+    figFonts[fontName] = {};
+
+    var lines = data.split("\n");
+    var headerData = lines.splice(0,1)[0].split(" ");
+    var figFont = figFonts[fontName];
+    var opts = {};
+
+    opts.hardBlank = headerData[0].substr(5,1);
+    opts.height = parseInt(headerData[1], 10);
+    opts.baseline = parseInt(headerData[2], 10);
+    opts.maxLength = parseInt(headerData[3], 10);
+    opts.oldLayout = parseInt(headerData[4], 10);
+    opts.numCommentLines = parseInt(headerData[5], 10);
+    opts.printDirection = (headerData.length &gt;= 6) ? parseInt(headerData[6], 10) : 0;
+    opts.fullLayout = (headerData.length &gt;= 7) ? parseInt(headerData[7], 10) : null;
+    opts.codeTagCount = (headerData.length &gt;= 8) ? parseInt(headerData[8], 10) : null;
+    opts.fittingRules = getSmushingRules(opts.oldLayout, opts.fullLayout);
+
+    figFont.options = opts;
+
+    // error check
+    if (opts.hardBlank.length !== 1 ||
+        isNaN(opts.height) ||
+        isNaN(opts.baseline) ||
+        isNaN(opts.maxLength) ||
+        isNaN(opts.oldLayout) ||
+        isNaN(opts.numCommentLines) )
+    {
+        throw new Error('FIGlet header contains invalid values.');
+    }
+
+<span class="apidocCodeCommentSpan">    /*
+        All FIGlet fonts must contain chars 32-126, 196, 214, 220, 228, 246, 252, 223
+    */
+</span>
+    var charNums = [], ii;
+    for (ii = 32; ii &lt;= 126; ii++) {
+        charNums.push(ii);
+    }
+    charNums = charNums.concat(196, 214, 220, 228, 246, 252, 223);
+
+    // error check - validate that there are enough lines in the file
+    if (lines.length &lt; (opts.numCommentLines + (opts.height * charNums.length)) ) {
+        throw new Error('FIGlet file is missing data.');
+    }
+
+    /*
+        Parse out the context of the file and put it into our figFont object
+    */
+
+    var cNum, endCharRegEx, parseError = false;
+
+    figFont.comment = lines.splice(0,opts.numCommentLines).join("\n");
+    figFont.numChars = 0;
+
+    while (lines.length &gt; 0 &amp;&amp; figFont.numChars &lt; charNums.length) {
+        cNum = charNums[figFont.numChars];
+        figFont[cNum] = lines.splice(0,opts.height);
+        // remove end sub-chars
+        for (ii = 0; ii &lt; opts.height; ii++) {
+            if (typeof figFont[cNum][ii] === "undefined") {
+                figFont[cNum][ii] = "";
+            } else {
+                endCharRegEx = new RegExp("\\"+figFont[cNum][ii].substr(figFont[cNum][ii].length-1,1)+"+$");
+                figFont[cNum][ii] = figFont[cNum][ii].replace(endCharRegEx,"");
+            }
+        }
+        figFont.numChars++;
+    }
+
+    /*
+        Now we check to see if any additional characters are present
+    */
+
+    while (lines.length &gt; 0) {
+        cNum = lines.splice(0,1)[0].split(" ")[0];
+        if ( /^0[xX][0-9a-fA-F]+$/.test(cNum) ) {
+            cNum = parseInt(cNum, 16);
+        } else if ( /^0[0-7]+$/.test(cNum) ) {
+            cNum = parseInt(cNum, 8);
+        } else if ( /^[0-9]+$/.test(cNum) ) {
+            cNum = parseInt(cNum, 10);
+        } else if ( /^-0[xX][0-9a-fA-F]+$/.test(cNum) ) {
+            cNum = parseInt(cNum, 16);
+        } else {
+            if (cNum === "") {break;}
+            // something's wrong
+            console.log("Invalid data:"+cNum);
+            parseError = true;
+            break;
+        }
+
+        figFont[cNum] = lines.splice(0,opts.height);
+        // remove end sub-chars
+        for (ii = 0; ii &lt; opts.height; ii++) {
+            if (typeof figFont[cNum][ii] === "undefined") {
+                figFont[cNum][ii] = "";
+            } else {
+                endCharRegEx = new RegExp("\\"+figFont[cNum][ii].substr(figFont[cNum][ii].length-1,1)+"+$");
+                figFont[cNum][ii] = figFont[cNum][ii].replace(endCharRegEx,"");
+            }
+        }
+        figFont.numChars++;
+    }
+
+    // error check
+    if (parseError === true) {
+        throw new Error('Error parsing data.');
+    }
+
+    return opts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.preloadFonts" id="apidoc.element.figlet.preloadFonts">
+        function <span class="apidocSignatureSpan">figlet.</span>preloadFonts
+        <span class="apidocSignatureSpan">(fonts, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">preloadFonts = function (fonts, next) {
+
+  if (typeof jQuery === 'undefined') {<span class="apidocCodeCommentSpan"> /* TODO: create common function for jQuery checks */
+</span>      throw new Error('jQuery is required for ajax method to work.');
+  }
+
+  jQuery.when.apply(this, fonts.map(function(name){
+        return jQuery.get(figDefaults.fontPath + '/' + name + '.flf')
+      })).then(function() {
+                  var args = fonts.length &gt; 1 ? arguments : [arguments];
+                  for(var i in fonts){
+                    me.parseFont(fonts[i], args[i][0]);
+                  }
+                  if(next)next();
+      });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The browser API supports a synchronous mode so long as fonts used are preloaded.
+
+Example:
+
+```js
+figlet.defaults({fontPath: "assets/fonts"});
+
+figlet.<span class="apidocCodeKeywordSpan">preloadFonts</span>(["Standard", "Ghost"], ready);
+
+function ready(){
+  console.log(figlet.textSync("ASCII"));
+  console.log(figlet.textSync("Art", "Ghost"));
+}
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.text" id="apidoc.element.figlet.text">
+        function <span class="apidocSignatureSpan">figlet.</span>text
+        <span class="apidocSignatureSpan">(txt, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">text = function (txt, options, next) {
+    var fontName = '';
+
+    // Validate inputs
+    txt = txt + '';
+
+    if (typeof arguments[1] === 'function') {
+        next = options;
+        options = {};
+        options.font = figDefaults.font; // default font
+    }
+
+    if (typeof options === 'string') {
+        fontName = options;
+        options = {};
+    } else {
+        options = options || {};
+        fontName = options.font || figDefaults.font;
+    }
+
+<span class="apidocCodeCommentSpan">    /*
+        Load the font. If it loads, it's data will be contained in the figFonts object.
+        The callback will recieve a fontsOpts object, which contains the default
+        options of the font (its fitting rules, etc etc).
+    */
+</span>    me.loadFont(fontName, function(err, fontOpts) {
+        if (err) {
+            return next(err);
+        }
+
+        next(null, generateText(fontName, _reworkFontOpts(fontOpts, options), txt));
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Input Text - A string of text to turn into ASCII Art.
+* Font Options - Either a string indicating the font name or an options object (description below).
+* Callback - A function to execute with the generated ASCII Art.
+
+Example:
+
+```js
+figlet.<span class="apidocCodeKeywordSpan">text</span>('Boo!', {
+font: 'Ghost',
+horizontalLayout: 'default',
+verticalLayout: 'default'
+}, function(err, data) {
+if (err) {
+    console.log('Something went wrong...');
+    console.dir(err);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.textSync" id="apidoc.element.figlet.textSync">
+        function <span class="apidocSignatureSpan">figlet.</span>textSync
+        <span class="apidocSignatureSpan">(txt, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">textSync = function (txt, options) {
+    var fontName = '';
+
+    // Validate inputs
+    txt = txt + '';
+
+    if (typeof options === 'string') {
+        fontName = options;
+        options = {};
+    } else {
+        options = options || {};
+        fontName = options.font || figDefaults.font;
+    }
+
+    var fontOpts = _reworkFontOpts(me.loadFontSync(fontName), options);
+    return generateText(fontName, fontOpts, txt);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* Input Text - A string of text to turn into ASCII Art.
+* Font Options - Either a string indicating the font name or an options object (description below).
+
+Example:
+
+```js
+console.log(figlet.<span class="apidocCodeKeywordSpan">textSync</span>('Boo!', {
+    font: 'Ghost',
+    horizontalLayout: 'default',
+    verticalLayout: 'default'
+}));
+```
+
+That will print out:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.figlet.figlet" id="apidoc.module.figlet.figlet">module figlet.figlet</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.figlet" id="apidoc.element.figlet.figlet.figlet">
+        function <span class="apidocSignatureSpan">figlet.</span>figlet
+        <span class="apidocSignatureSpan">(txt, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">figlet = function (txt, options, next) {
+    me.text(txt, options, next);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.defaults" id="apidoc.element.figlet.figlet.defaults">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>defaults
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function (opts) {
+    if (typeof opts === 'object' &amp;&amp; opts !== null) {
+        for (var prop in opts) {
+            if (opts.hasOwnProperty(prop)) {
+                figDefaults[prop] = opts[prop];
+            }
+        }
+    }
+    return JSON.parse(JSON.stringify(figDefaults));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### textSync
+
+The browser API supports a synchronous mode so long as fonts used are preloaded.
+
+Example:
+
+```js
+figlet.<span class="apidocCodeKeywordSpan">defaults</span>({fontPath: "assets/fonts"});
+
+figlet.preloadFonts(["Standard", "Ghost"], ready);
+
+function ready(){
+  console.log(figlet.textSync("ASCII"));
+  console.log(figlet.textSync("Art", "Ghost"));
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.fonts" id="apidoc.element.figlet.figlet.fonts">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>fonts
+        <span class="apidocSignatureSpan">(next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fonts = function (next) {
+    var fontList = [];
+    fs.readdir(fontDir, function (err, files) { // '/' denotes the root folder
+        if (err) {
+            return next(err);
+        }
+
+        files.forEach( function (file) {
+            if ( /\.flf$/.test(file) ) {
+                fontList.push( file.replace(/\.flf$/,'') );
+            }
+        });
+
+        next(null, fontList);
+    });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### fonts
+
+The fonts function allows you to get a list of all of the available fonts. Example usage:
+
+```js
+figlet.<span class="apidocCodeKeywordSpan">fonts</span>(function(err, fonts) {
+    if (err) {
+        console.log('something went wrong...');
+        console.dir(err);
+        return;
+    }
+    console.dir(fonts);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.fontsSync" id="apidoc.element.figlet.figlet.fontsSync">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>fontsSync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fontsSync = function () {
+    var fontList = [];
+    fs.readdirSync(fontDir).forEach(function(file) {
+        if ( /\.flf$/.test(file) ) {
+            fontList.push( file.replace(/\.flf$/,'') );
+        }
+    });
+
+    return fontList;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### fontsSync
+
+The synchronous version of the fonts method
+
+```js
+console.log(figlet.<span class="apidocCodeKeywordSpan">fontsSync</span>());
+```
+
+Getting Started - The Browser
+-------------------------
+
+The browser API is the same as the Node API with the exception of the "fonts" method not being available. The browser
+version also requires [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) (or a [shim](https://github.com/github
+/fetch)) for its loadFont function.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.loadFont" id="apidoc.element.figlet.figlet.loadFont">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>loadFont
+        <span class="apidocSignatureSpan">(name, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFont = function (name, next) {
+    fs.readFile(fontDir + name + '.flf',  {encoding: 'utf-8'}, function(err, fontData) {
+        if (err) {
+            return next(err);
+        }
+
+        fontData = fontData + '';
+        try {
+            next(null, figlet.parseFont(name, fontData));
+        } catch(error) {
+            next(error);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.loadFontSync" id="apidoc.element.figlet.figlet.loadFontSync">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>loadFontSync
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFontSync = function (name) {
+    var fontData = fs.readFileSync(fontDir + name + '.flf',  {encoding: 'utf-8'});
+
+    fontData = fontData + '';
+    return figlet.parseFont(name, fontData);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.metadata" id="apidoc.element.figlet.figlet.metadata">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>metadata
+        <span class="apidocSignatureSpan">(fontName, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">metadata = function (fontName, next) {
+    fontName = fontName + '';
+
+<span class="apidocCodeCommentSpan">    /*
+        Load the font. If it loads, it's data will be contained in the figFonts object.
+        The callback will recieve a fontsOpts object, which contains the default
+        options of the font (its fitting rules, etc etc).
+    */
+</span>    me.loadFont(fontName, function(err, fontOpts) {
+        if (err) {
+            next(err);
+            return;
+        }
+
+        next(null, fontOpts, figFonts[fontName].comment);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+In most cases you'll either use the default setting or the "fitted" setting. Most fonts don't support vertical
+ kerning, but a hand full fo them do (like the "Standard" font).
+
+### metadata
+
+The metadata function allows you to retrieve a font's default options and header comment. Example usage:
+
+```js
+figlet.<span class="apidocCodeKeywordSpan">metadata</span>('Standard', function(err, options, headerComment) {
+if (err) {
+    console.log('something went wrong...');
+    console.dir(err);
+    return;
+}
+console.dir(options);
+console.log(headerComment);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.parseFont" id="apidoc.element.figlet.figlet.parseFont">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>parseFont
+        <span class="apidocSignatureSpan">(fontName, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseFont = function (fontName, data) {
+    data = data.replace(/\r\n/g,"\n").replace(/\r/g,"\n");
+    figFonts[fontName] = {};
+
+    var lines = data.split("\n");
+    var headerData = lines.splice(0,1)[0].split(" ");
+    var figFont = figFonts[fontName];
+    var opts = {};
+
+    opts.hardBlank = headerData[0].substr(5,1);
+    opts.height = parseInt(headerData[1], 10);
+    opts.baseline = parseInt(headerData[2], 10);
+    opts.maxLength = parseInt(headerData[3], 10);
+    opts.oldLayout = parseInt(headerData[4], 10);
+    opts.numCommentLines = parseInt(headerData[5], 10);
+    opts.printDirection = (headerData.length &gt;= 6) ? parseInt(headerData[6], 10) : 0;
+    opts.fullLayout = (headerData.length &gt;= 7) ? parseInt(headerData[7], 10) : null;
+    opts.codeTagCount = (headerData.length &gt;= 8) ? parseInt(headerData[8], 10) : null;
+    opts.fittingRules = getSmushingRules(opts.oldLayout, opts.fullLayout);
+
+    figFont.options = opts;
+
+    // error check
+    if (opts.hardBlank.length !== 1 ||
+        isNaN(opts.height) ||
+        isNaN(opts.baseline) ||
+        isNaN(opts.maxLength) ||
+        isNaN(opts.oldLayout) ||
+        isNaN(opts.numCommentLines) )
+    {
+        throw new Error('FIGlet header contains invalid values.');
+    }
+
+<span class="apidocCodeCommentSpan">    /*
+        All FIGlet fonts must contain chars 32-126, 196, 214, 220, 228, 246, 252, 223
+    */
+</span>
+    var charNums = [], ii;
+    for (ii = 32; ii &lt;= 126; ii++) {
+        charNums.push(ii);
+    }
+    charNums = charNums.concat(196, 214, 220, 228, 246, 252, 223);
+
+    // error check - validate that there are enough lines in the file
+    if (lines.length &lt; (opts.numCommentLines + (opts.height * charNums.length)) ) {
+        throw new Error('FIGlet file is missing data.');
+    }
+
+    /*
+        Parse out the context of the file and put it into our figFont object
+    */
+
+    var cNum, endCharRegEx, parseError = false;
+
+    figFont.comment = lines.splice(0,opts.numCommentLines).join("\n");
+    figFont.numChars = 0;
+
+    while (lines.length &gt; 0 &amp;&amp; figFont.numChars &lt; charNums.length) {
+        cNum = charNums[figFont.numChars];
+        figFont[cNum] = lines.splice(0,opts.height);
+        // remove end sub-chars
+        for (ii = 0; ii &lt; opts.height; ii++) {
+            if (typeof figFont[cNum][ii] === "undefined") {
+                figFont[cNum][ii] = "";
+            } else {
+                endCharRegEx = new RegExp("\\"+figFont[cNum][ii].substr(figFont[cNum][ii].length-1,1)+"+$");
+                figFont[cNum][ii] = figFont[cNum][ii].replace(endCharRegEx,"");
+            }
+        }
+        figFont.numChars++;
+    }
+
+    /*
+        Now we check to see if any additional characters are present
+    */
+
+    while (lines.length &gt; 0) {
+        cNum = lines.splice(0,1)[0].split(" ")[0];
+        if ( /^0[xX][0-9a-fA-F]+$/.test(cNum) ) {
+            cNum = parseInt(cNum, 16);
+        } else if ( /^0[0-7]+$/.test(cNum) ) {
+            cNum = parseInt(cNum, 8);
+        } else if ( /^[0-9]+$/.test(cNum) ) {
+            cNum = parseInt(cNum, 10);
+        } else if ( /^-0[xX][0-9a-fA-F]+$/.test(cNum) ) {
+            cNum = parseInt(cNum, 16);
+        } else {
+            if (cNum === "") {break;}
+            // something's wrong
+            console.log("Invalid data:"+cNum);
+            parseError = true;
+            break;
+        }
+
+        figFont[cNum] = lines.splice(0,opts.height);
+        // remove end sub-chars
+        for (ii = 0; ii &lt; opts.height; ii++) {
+            if (typeof figFont[cNum][ii] === "undefined") {
+                figFont[cNum][ii] = "";
+            } else {
+                endCharRegEx = new RegExp("\\"+figFont[cNum][ii].substr(figFont[cNum][ii].length-1,1)+"+$");
+                figFont[cNum][ii] = figFont[cNum][ii].replace(endCharRegEx,"");
+            }
+        }
+        figFont.numChars++;
+    }
+
+    // error check
+    if (parseError === true) {
+        throw new Error('Error parsing data.');
+    }
+
+    return opts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.preloadFonts" id="apidoc.element.figlet.figlet.preloadFonts">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>preloadFonts
+        <span class="apidocSignatureSpan">(fonts, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">preloadFonts = function (fonts, next) {
+
+  if (typeof jQuery === 'undefined') {<span class="apidocCodeCommentSpan"> /* TODO: create common function for jQuery checks */
+</span>      throw new Error('jQuery is required for ajax method to work.');
+  }
+
+  jQuery.when.apply(this, fonts.map(function(name){
+        return jQuery.get(figDefaults.fontPath + '/' + name + '.flf')
+      })).then(function() {
+                  var args = fonts.length &gt; 1 ? arguments : [arguments];
+                  for(var i in fonts){
+                    me.parseFont(fonts[i], args[i][0]);
+                  }
+                  if(next)next();
+      });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The browser API supports a synchronous mode so long as fonts used are preloaded.
+
+Example:
+
+```js
+figlet.defaults({fontPath: "assets/fonts"});
+
+figlet.<span class="apidocCodeKeywordSpan">preloadFonts</span>(["Standard", "Ghost"], ready);
+
+function ready(){
+  console.log(figlet.textSync("ASCII"));
+  console.log(figlet.textSync("Art", "Ghost"));
+}
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.text" id="apidoc.element.figlet.figlet.text">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>text
+        <span class="apidocSignatureSpan">(txt, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">text = function (txt, options, next) {
+    var fontName = '';
+
+    // Validate inputs
+    txt = txt + '';
+
+    if (typeof arguments[1] === 'function') {
+        next = options;
+        options = {};
+        options.font = figDefaults.font; // default font
+    }
+
+    if (typeof options === 'string') {
+        fontName = options;
+        options = {};
+    } else {
+        options = options || {};
+        fontName = options.font || figDefaults.font;
+    }
+
+<span class="apidocCodeCommentSpan">    /*
+        Load the font. If it loads, it's data will be contained in the figFonts object.
+        The callback will recieve a fontsOpts object, which contains the default
+        options of the font (its fitting rules, etc etc).
+    */
+</span>    me.loadFont(fontName, function(err, fontOpts) {
+        if (err) {
+            return next(err);
+        }
+
+        next(null, generateText(fontName, _reworkFontOpts(fontOpts, options), txt));
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Input Text - A string of text to turn into ASCII Art.
+* Font Options - Either a string indicating the font name or an options object (description below).
+* Callback - A function to execute with the generated ASCII Art.
+
+Example:
+
+```js
+figlet.<span class="apidocCodeKeywordSpan">text</span>('Boo!', {
+font: 'Ghost',
+horizontalLayout: 'default',
+verticalLayout: 'default'
+}, function(err, data) {
+if (err) {
+    console.log('Something went wrong...');
+    console.dir(err);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.figlet.figlet.textSync" id="apidoc.element.figlet.figlet.textSync">
+        function <span class="apidocSignatureSpan">figlet.figlet.</span>textSync
+        <span class="apidocSignatureSpan">(txt, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">textSync = function (txt, options) {
+    var fontName = '';
+
+    // Validate inputs
+    txt = txt + '';
+
+    if (typeof options === 'string') {
+        fontName = options;
+        options = {};
+    } else {
+        options = options || {};
+        fontName = options.font || figDefaults.font;
+    }
+
+    var fontOpts = _reworkFontOpts(me.loadFontSync(fontName), options);
+    return generateText(fontName, fontOpts, txt);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* Input Text - A string of text to turn into ASCII Art.
+* Font Options - Either a string indicating the font name or an options object (description below).
+
+Example:
+
+```js
+console.log(figlet.<span class="apidocCodeKeywordSpan">textSync</span>('Boo!', {
+    font: 'Ghost',
+    horizontalLayout: 'default',
+    verticalLayout: 'default'
+}));
+```
+
+That will print out:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
